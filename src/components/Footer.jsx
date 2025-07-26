@@ -4,10 +4,17 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiMail, FiPhone, FiLinkedin, FiTwitter, FiMapPin } = FiIcons;
+const { FiCalendar } = FiIcons;
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="bg-charcoal-900 text-white">
@@ -24,25 +31,8 @@ function Footer() {
               </h3>
             </div>
             <p className="text-charcoal-300 text-sm leading-relaxed">
-              Transform missed opportunities into commanding presence with strategic analysis 
-              that reveals what separates forgettable experts from voices people remember.
+              Transform missed opportunities into commanding presence with strategic analysis that reveals what separates forgettable experts from voices people remember.
             </p>
-            <div className="flex space-x-4">
-              <motion.a
-                href="https://linkedin.com"
-                whileHover={{ scale: 1.1 }}
-                className="text-charcoal-400 hover:text-primary-400 transition-colors"
-              >
-                <SafeIcon icon={FiLinkedin} className="w-5 h-5" />
-              </motion.a>
-              <motion.a
-                href="https://twitter.com"
-                whileHover={{ scale: 1.1 }}
-                className="text-charcoal-400 hover:text-primary-400 transition-colors"
-              >
-                <SafeIcon icon={FiTwitter} className="w-5 h-5" />
-              </motion.a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -64,6 +54,11 @@ function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <a href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations" target="_blank" rel="noopener noreferrer" className="text-charcoal-300 hover:text-primary-400 transition-colors text-sm">
+                  Schedule Consultation
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -71,40 +66,72 @@ function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="space-y-2 text-sm text-charcoal-300">
-              <li>Media Performance Analysis</li>
-              <li>Video Breakdown & Framework Analysis</li>
-              <li>Strategic Reports</li>
-              <li>Strategy Sessions</li>
-              <li>Custom Materials</li>
+              <li>
+                <Link
+                  to="/#analysis"
+                  onClick={() => scrollToSection('analysis')}
+                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
+                >
+                  Media Performance Analysis
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#framework"
+                  onClick={() => scrollToSection('framework')}
+                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
+                >
+                  Framework Analysis
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#reports"
+                  onClick={() => scrollToSection('reports')}
+                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
+                >
+                  Strategic Reports
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#sessions"
+                  onClick={() => scrollToSection('sessions')}
+                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
+                >
+                  Strategy Sessions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/#materials"
+                  onClick={() => scrollToSection('materials')}
+                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
+                >
+                  Custom Materials
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Contact</h3>
+            <h3 className="text-lg font-semibold text-white">Get Started</h3>
             <div className="space-y-3">
-              <a
-                href="mailto:insights@mediaperformanceinsights.com"
-                className="flex items-center space-x-2 text-charcoal-300 hover:text-primary-400 transition-colors text-sm"
-              >
-                <SafeIcon icon={FiMail} className="w-4 h-4" />
-                <span>insights@mediaperformanceinsights.com</span>
-              </a>
-              <a
-                href="tel:+1234567890"
-                className="flex items-center space-x-2 text-charcoal-300 hover:text-primary-400 transition-colors text-sm"
-              >
-                <SafeIcon icon={FiPhone} className="w-4 h-4" />
-                <span>(123) 456-7890</span>
-              </a>
+              <p className="text-charcoal-300 text-sm">
+                Ready to transform your media presence? Schedule your strategic consultation today.
+              </p>
             </div>
             <motion.a
-              href="mailto:insights@mediaperformanceinsights.com"
+              href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block bg-gold-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-gold-600 transition-colors text-sm"
+              className="inline-flex items-center space-x-2 bg-gold-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gold-600 transition-colors text-sm"
             >
-              Schedule Consultation
+              <SafeIcon icon={FiCalendar} className="w-4 h-4" />
+              <span>Schedule Consultation</span>
             </motion.a>
           </div>
         </div>
@@ -122,6 +149,9 @@ function Footer() {
               <Link to="/terms" className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm">
                 Terms of Service
               </Link>
+              <a href="https://www.linkedin.com/in/anotherjamesbrown" target="_blank" rel="noopener noreferrer" className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm">
+                LinkedIn
+              </a>
             </div>
           </div>
         </div>

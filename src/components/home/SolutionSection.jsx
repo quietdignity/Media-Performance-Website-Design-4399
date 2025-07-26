@@ -10,25 +10,25 @@ function SolutionSection() {
     {
       icon: FiTriangle,
       name: "The Storytelling Triangle",
-      description: "Structure your message with three powerful points that audiences remember and repeat.",
+      description: "How your personal experience connects with audience needs at the right moment.",
       color: "from-blue-500 to-blue-700"
     },
     {
       icon: FiCompass,
       name: "The Persuasion Compass",
-      description: "Navigate complex topics by finding your true north in every conversation.",
+      description: "Whether you're building credibility, emotional connection, logical reasoning, and perfect timing.",
       color: "from-green-500 to-green-700"
     },
     {
       icon: FiZap,
       name: "The F.I.R.E. Method",
-      description: "Focus, Impact, Relevance, and Engagement—the four pillars of commanding presence.",
+      description: "Your ability to read the room and adapt in real-time.",
       color: "from-orange-500 to-red-600"
     },
     {
       icon: FiEye,
       name: "Self Awareness Matrix (S.A.M.)",
-      description: "Understand your communication patterns and optimize them for maximum impact.",
+      description: "How you present your complete expertise, not just obvious qualifications.",
       color: "from-purple-500 to-purple-700"
     }
   ];
@@ -47,13 +47,23 @@ function SolutionSection() {
             Strategic Media Analysis That Creates{' '}
             <span className="text-gold-500">Lasting Impact</span>
           </h2>
-          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-            Our proven frameworks transform how you communicate, giving you the strategic advantage 
-            that separates industry leaders from industry participants.
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            We apply a proprietary suite of analysis tools developed from decades of media study and centuries 
+            of communication philosophy to identify precisely where your message succeeded and where it failed to create influence.
+          </p>
+          
+          <h3 className="text-2xl font-bold text-charcoal-900 mt-12 mb-6">
+            Our Proprietary Analysis Framework
+          </h3>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            Unlike generic media training that focuses on surface-level presentation skills, our analysis reveals 
+            the deep structural elements that separate memorable leaders from forgettable experts. We examine your 
+            performance through four proven diagnostic tools that have helped executives increase stakeholder confidence, 
+            improve crisis response effectiveness, and build authentic authority that drives business results.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div id="framework" className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {frameworks.map((framework, index) => (
             <motion.div
               key={index}
@@ -82,14 +92,21 @@ function SolutionSection() {
           className="bg-charcoal-900 rounded-2xl p-8 md:p-12 text-center text-white"
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-6">
-            Building on What You've Already Done
+            Our Philosophy
           </h3>
           <p className="text-xl text-charcoal-300 max-w-3xl mx-auto mb-8">
-            We don't start from scratch. We analyze your existing media appearances, identify what's working, 
-            and strategically enhance your natural strengths with proven frameworks that amplify your impact.
+            We believe the best way to improve is by accepting and building on what happened before. Our team will work 
+            with you to choose, obtain and analyze previous media appearances, identifying both strengths to amplify 
+            and missed opportunities to capture in future interactions.
+          </p>
+          <p className="text-xl text-charcoal-300 max-w-3xl mx-auto mb-8">
+            This systematic approach reveals exactly why some messages create lasting influence while others disappear into 
+            background noise, giving you a strategic roadmap for commanding attention in every future appearance.
           </p>
           <motion.a
-            href="mailto:insights@mediaperformanceinsights.com"
+            href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block bg-gold-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gold-600 transition-colors"

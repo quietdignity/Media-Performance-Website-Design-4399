@@ -42,9 +42,17 @@ function ProblemSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-6">
             Why Smart Leaders Still Struggle in Media
           </h2>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            You're brilliant at your job. You have insights worth sharing. But when the cameras roll or 
+            the podcast starts recording, something goes wrong.
+          </p>
+          <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed mb-8">
+            Your expertise gets lost in generic talking points. Important messages fall flat. 
+            Opportunities to build authentic authority slip away in three-minute segments that everyone forgets.
+          </p>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-            Intelligence and expertise aren't enough. Media success requires systematic frameworks 
-            that most professionals never learn, leading to missed opportunities and diminished impact.
+            The hidden truth: Media success isn't about being smarter or more charismatic. It's about understanding 
+            systematic frameworks that separate memorable communicators from forgettable experts.
           </p>
         </motion.div>
 

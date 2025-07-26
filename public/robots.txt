@@ -1,0 +1,7 @@
+# robots.txt for Media Performance Insights
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mediaperformanceinsights.com/sitemap.xml

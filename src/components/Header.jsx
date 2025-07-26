@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiMenu, FiX, FiPhone, FiMail } = FiIcons;
+const { FiMenu, FiX } = FiIcons;
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +15,7 @@ function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,7 +25,6 @@ function Header() {
   }, [location]);
 
   const navigation = [
-    { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -40,13 +40,24 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" aria-label="Media Performance Insights Home">
             <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">MPI</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl font-bold text-charcoal-900">
-                MediaPerformance<span className="text-primary-600">Insights</span>
+              <h1
+                className={`text-xl font-bold transition-colors duration-300 ${
+                  isScrolled ? 'text-charcoal-900' : 'text-white'
+                }`}
+              >
+                MediaPerformance
+                <span
+                  className={`transition-colors duration-300 ${
+                    isScrolled ? 'text-primary-600' : 'text-white'
+                  }`}
+                >
+                  Insights
+                </span>
               </h1>
             </div>
           </Link>
@@ -59,23 +70,23 @@ function Header() {
                 to={item.href}
                 className={`text-sm font-medium transition-colors duration-200 ${
                   location.pathname === item.href
-                    ? 'text-primary-600'
-                    : 'text-charcoal-700 hover:text-primary-600'
+                    ? isScrolled
+                      ? 'text-primary-600'
+                      : 'text-white'
+                    : isScrolled
+                    ? 'text-charcoal-700 hover:text-primary-600'
+                    : 'text-white hover:text-white/80'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
+
             <div className="flex items-center space-x-4 ml-8">
-              <a
-                href="tel:+1234567890"
-                className="flex items-center space-x-1 text-sm text-charcoal-600 hover:text-primary-600 transition-colors"
-              >
-                <SafeIcon icon={FiPhone} className="w-4 h-4" />
-                <span>(123) 456-7890</span>
-              </a>
               <motion.a
-                href="mailto:insights@mediaperformanceinsights.com"
+                href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gold-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-gold-600 transition-colors"
@@ -88,7 +99,10 @@ function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-charcoal-700 hover:bg-charcoal-100 transition-colors"
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isScrolled ? 'text-charcoal-700 hover:bg-charcoal-100' : 'text-white hover:bg-white/10'
+            }`}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             <SafeIcon icon={isMenuOpen ? FiX : FiMenu} className="w-6 h-6" />
           </button>
@@ -114,16 +128,12 @@ function Header() {
                 {item.name}
               </Link>
             ))}
+
             <div className="px-4 pt-4 space-y-3 border-t border-charcoal-200">
               <a
-                href="tel:+1234567890"
-                className="flex items-center space-x-2 text-sm text-charcoal-600"
-              >
-                <SafeIcon icon={FiPhone} className="w-4 h-4" />
-                <span>(123) 456-7890</span>
-              </a>
-              <a
-                href="mailto:insights@mediaperformanceinsights.com"
+                href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-gold-500 text-white px-6 py-3 rounded-lg font-medium text-center hover:bg-gold-600 transition-colors"
               >
                 Get Insights Today

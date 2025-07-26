@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SeoHelmet from '../components/SeoHelmet';
 import HeroSection from '../components/home/HeroSection';
 import ProblemSection from '../components/home/ProblemSection';
 import SolutionSection from '../components/home/SolutionSection';
@@ -15,6 +16,11 @@ function HomePage() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <SeoHelmet 
+        title="Media Performance Insights | Strategic Media Analysis for Executives & Leaders"
+        description="Transform missed opportunities into commanding presence with strategic analysis that reveals exactly what separates forgettable experts from voices people remember and trust."
+        keywords="media training, executive communication, media performance, strategic communication, media analysis, public speaking, interview coaching"
+      />
       <HeroSection />
       <ProblemSection />
       <SolutionSection />

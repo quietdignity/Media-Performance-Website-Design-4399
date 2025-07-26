@@ -1,21 +1,25 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
+import * as FiIcons from 'react-icons/fi';
+import SafeIcon from '../common/SafeIcon';
+
+const {FiCalendar} = FiIcons;
 
 function PrivacyPage() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+      transition={{duration: 0.5}}
       className="pt-20"
     >
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{y: 50, opacity: 0}}
+            animate={{y: 0, opacity: 1}}
+            transition={{duration: 0.8, delay: 0.2}}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-8">
               Privacy Policy
@@ -23,13 +27,11 @@ function PrivacyPage() {
             <p className="text-lg text-charcoal-600 mb-8">
               Last updated: {new Date().toLocaleDateString()}
             </p>
-
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold text-charcoal-900 mt-12 mb-6">Information We Collect</h2>
               <p className="text-charcoal-600 leading-relaxed mb-6">
-                We collect information you provide directly to us, such as when you contact us 
-                for consultation services, subscribe to our newsletter, or communicate with us 
-                via email or phone.
+                We collect information you provide directly to us, such as when you contact us for consultation services, 
+                schedule a consultation, or communicate with us during our sessions.
               </p>
 
               <h3 className="text-xl font-bold text-charcoal-900 mt-8 mb-4">Personal Information</h3>
@@ -53,9 +55,8 @@ function PrivacyPage() {
 
               <h2 className="text-2xl font-bold text-charcoal-900 mt-12 mb-6">Information Sharing</h2>
               <p className="text-charcoal-600 leading-relaxed mb-6">
-                We do not sell, trade, or otherwise transfer your personal information to third 
-                parties without your consent, except as described in this policy. We may share 
-                information in the following circumstances:
+                We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, 
+                except as described in this policy. We may share information in the following circumstances:
               </p>
               <ul className="list-disc pl-6 text-charcoal-600 space-y-2 mb-6">
                 <li>With your explicit consent</li>
@@ -65,9 +66,8 @@ function PrivacyPage() {
 
               <h2 className="text-2xl font-bold text-charcoal-900 mt-12 mb-6">Data Security</h2>
               <p className="text-charcoal-600 leading-relaxed mb-6">
-                We implement appropriate technical and organizational measures to protect your 
-                personal information against unauthorized access, alteration, disclosure, or 
-                destruction.
+                We implement appropriate technical and organizational measures to protect your personal information 
+                against unauthorized access, alteration, disclosure, or destruction.
               </p>
 
               <h2 className="text-2xl font-bold text-charcoal-900 mt-12 mb-6">Your Rights</h2>
@@ -83,14 +83,23 @@ function PrivacyPage() {
 
               <h2 className="text-2xl font-bold text-charcoal-900 mt-12 mb-6">Contact Us</h2>
               <p className="text-charcoal-600 leading-relaxed mb-6">
-                If you have any questions about this Privacy Policy, please contact us at:
+                If you have any questions about this Privacy Policy, please contact us by scheduling a consultation:
               </p>
               <div className="bg-charcoal-50 p-6 rounded-lg">
-                <p className="text-charcoal-700">
-                  <strong>MediaPerformanceInsights.com</strong><br />
-                  Email: insights@mediaperformanceinsights.com<br />
-                  Phone: (123) 456-7890
+                <p className="text-charcoal-700 mb-4">
+                  <strong>MediaPerformanceInsights.com</strong>
                 </p>
+                <motion.a
+                  href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{scale: 1.05}}
+                  whileTap={{scale: 0.95}}
+                  className="inline-flex items-center space-x-2 bg-gold-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gold-600 transition-colors text-sm"
+                >
+                  <SafeIcon icon={FiCalendar} className="w-4 h-4" />
+                  <span>Schedule a Consultation</span>
+                </motion.a>
               </div>
             </div>
           </motion.div>
