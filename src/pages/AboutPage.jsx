@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 import SeoHelmet from '../components/SeoHelmet';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiUser, FiAward, FiBriefcase, FiBook, FiTarget, FiTrendingUp, FiLink, FiLinkedin } = FiIcons;
+const {FiUser, FiAward, FiBriefcase, FiBook, FiTarget, FiTrendingUp, FiLink, FiLinkedin} = FiIcons;
 
 function AboutPage() {
   const credentials = [
@@ -20,13 +20,13 @@ function AboutPage() {
     },
     {
       icon: FiTarget,
-      title: "Corporate Communications",
-      description: "Strategic communication consulting for Fortune 500 companies"
+      title: "Political Speechwriter and Internal Communications Manager",
+      description: "8+ years helping executives optimize their media performance"
     },
     {
       icon: FiAward,
-      title: "Government & Nonprofit",
-      description: "Media training and crisis communication for public sector organizations"
+      title: "Decades of Media Communications",
+      description: "Decades of Media Communications and broadcasting expertise"
     }
   ];
 
@@ -58,27 +58,58 @@ function AboutPage() {
     }
   ];
 
+  // Schema for About Page
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "James A. Brown",
+      "jobTitle": "Veteran Journalist and Strategic Communication Expert",
+      "description": "Veteran journalist with extensive experience in national and local media, having worked with NPR, USA Today, WHEC, WZNE, WXXI, PBS, BBC, nonprofit, corporate and government communications.",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Media Performance Insights"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/anotherjamesbrown",
+        "https://muckrack.com/jamesbrowntv"
+      ],
+      "knowsAbout": [
+        "Media Training",
+        "Strategic Communication",
+        "Public Speaking",
+        "Crisis Communication"
+      ],
+      "alumniOf": [
+        "NPR",
+        "USA Today"
+      ]
+    }
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+      transition={{duration: 0.5}}
       className="pt-20"
     >
-      <SeoHelmet 
+      <SeoHelmet
         title="About James A. Brown | Media Performance Insights"
         description="Meet James A. Brown, veteran journalist with experience at NPR, USA Today, PBS, BBC and more. Strategic communication expert helping executives transform their media presence."
         keywords="James A. Brown, media expert, NPR journalist, USA Today, strategic communication, media consultant, PBS, BBC"
+        schema={aboutSchema}
       />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-charcoal-900 to-primary-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{y: 50, opacity: 0}}
+            animate={{y: 0, opacity: 1}}
+            transition={{duration: 0.8, delay: 0.2}}
             className="text-center text-white"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -96,10 +127,10 @@ function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              initial={{ x: -50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              initial={{x: -50, opacity: 0}}
+              whileInView={{x: 0, opacity: 1}}
+              viewport={{once: true}}
+              transition={{duration: 0.8}}
               className="space-y-6"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900">
@@ -117,26 +148,24 @@ function AboutPage() {
               <p className="text-lg text-charcoal-600 leading-relaxed">
                 Based in Rochester, NY, James is a rabid Buffalo Bills fan and proud member of Bills Mafia.
               </p>
-              
               <div className="flex flex-wrap items-center gap-4 pt-4">
-                <motion.a 
-                  href="https://muckrack.com/jamesbrowntv" 
-                  target="_blank" 
+                <motion.a
+                  href="https://muckrack.com/jamesbrowntv"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{scale: 1.05}}
+                  whileTap={{scale: 0.95}}
                   className="inline-flex items-center space-x-2 bg-charcoal-800 text-white px-4 py-2 rounded-lg hover:bg-charcoal-700 transition-colors"
                 >
                   <SafeIcon icon={FiLink} className="w-5 h-5" />
                   <span>MuckRack</span>
                 </motion.a>
-                
-                <motion.a 
-                  href="https://www.linkedin.com/in/anotherjamesbrown" 
-                  target="_blank" 
+                <motion.a
+                  href="https://www.linkedin.com/in/anotherjamesbrown"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  whileHover={{scale: 1.05}}
+                  whileTap={{scale: 0.95}}
                   className="inline-flex items-center space-x-2 bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors"
                 >
                   <SafeIcon icon={FiLinkedin} className="w-5 h-5" />
@@ -146,18 +175,18 @@ function AboutPage() {
             </motion.div>
 
             <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{x: 50, opacity: 0}}
+              whileInView={{x: 0, opacity: 1}}
+              viewport={{once: true}}
+              transition={{duration: 0.8, delay: 0.2}}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl mx-auto" style={{ maxWidth: "400px" }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl mx-auto" style={{maxWidth: "400px"}}>
                 <img
                   src="https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1753472217521-blob"
                   alt="James A. Brown - Media Performance Insights Founder"
                   className="w-full object-contain"
-                  style={{ maxHeight: "400px" }}
+                  style={{maxHeight: "400px"}}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/50 to-transparent"></div>
               </div>
@@ -170,25 +199,24 @@ function AboutPage() {
       <section className="py-12 bg-primary-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{y: 30, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            viewport={{once: true}}
+            transition={{duration: 0.8}}
             className="text-center mb-8"
           >
             <h2 className="text-3xl font-bold text-white mb-6">
               Media Experience
             </h2>
           </motion.div>
-          
           <div className="flex flex-wrap justify-center items-center gap-8">
             {mediaOrganizations.map((org, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{y: 20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.5, delay: index * 0.1}}
                 className="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg"
               >
                 <span className="text-white text-lg font-medium">{org}</span>
@@ -202,10 +230,10 @@ function AboutPage() {
       <section className="py-20 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{y: 50, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            viewport={{once: true}}
+            transition={{duration: 0.8}}
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
@@ -220,10 +248,10 @@ function AboutPage() {
             {credentials.map((credential, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{y: 50, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.6, delay: index * 0.1}}
                 className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center mb-6">
@@ -241,10 +269,10 @@ function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{y: 50, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            viewport={{once: true}}
+            transition={{duration: 0.8}}
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
@@ -259,10 +287,10 @@ function AboutPage() {
             {methodology.map((method, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{y: 50, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                viewport={{once: true}}
+                transition={{duration: 0.6, delay: index * 0.1}}
                 className="text-center"
               >
                 <div className="w-20 h-20 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -275,10 +303,10 @@ function AboutPage() {
           </div>
 
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            initial={{y: 50, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            viewport={{once: true}}
+            transition={{duration: 0.8, delay: 0.4}}
             className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-center text-white"
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-6">
@@ -291,8 +319,8 @@ function AboutPage() {
               href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{scale: 1.05}}
+              whileTap={{scale: 0.95}}
               className="inline-block bg-gold-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gold-600 transition-colors"
             >
               Work With James

@@ -1,20 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import {Link} from 'react-router-dom';
+import {motion} from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiCalendar } = FiIcons;
+const {FiCalendar}=FiIcons;
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const currentYear=new Date().getFullYear();
 
   return (
     <footer className="bg-charcoal-900 text-white">
@@ -50,6 +43,16 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/services" className="text-charcoal-300 hover:text-primary-400 transition-colors text-sm">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/frameworks" className="text-charcoal-300 hover:text-primary-400 transition-colors text-sm">
+                  Our Frameworks
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="text-charcoal-300 hover:text-primary-400 transition-colors text-sm">
                   Contact
                 </Link>
@@ -67,48 +70,13 @@ function Footer() {
             <h3 className="text-lg font-semibold text-white">Services</h3>
             <ul className="space-y-2 text-sm text-charcoal-300">
               <li>
-                <Link
-                  to="/#analysis"
-                  onClick={() => scrollToSection('analysis')}
-                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
-                >
+                <Link to="/services#analysis" className="text-charcoal-300 hover:text-primary-400 transition-colors">
                   Media Performance Analysis
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/#framework"
-                  onClick={() => scrollToSection('framework')}
-                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
-                >
-                  Framework Analysis
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/#reports"
-                  onClick={() => scrollToSection('reports')}
-                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
-                >
-                  Strategic Reports
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/#sessions"
-                  onClick={() => scrollToSection('sessions')}
-                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
-                >
-                  Strategy Sessions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/#materials"
-                  onClick={() => scrollToSection('materials')}
-                  className="text-charcoal-300 hover:text-primary-400 transition-colors"
-                >
-                  Custom Materials
+                <Link to="/services#partnership" className="text-charcoal-300 hover:text-primary-400 transition-colors">
+                  Media Performance Partnership
                 </Link>
               </li>
             </ul>
@@ -126,8 +94,8 @@ function Footer() {
               href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{scale: 1.05}}
+              whileTap={{scale: 0.95}}
               className="inline-flex items-center space-x-2 bg-gold-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gold-600 transition-colors text-sm"
             >
               <SafeIcon icon={FiCalendar} className="w-4 h-4" />
@@ -149,7 +117,12 @@ function Footer() {
               <Link to="/terms" className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm">
                 Terms of Service
               </Link>
-              <a href="https://www.linkedin.com/in/anotherjamesbrown" target="_blank" rel="noopener noreferrer" className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm">
+              <a
+                href="https://www.linkedin.com/in/anotherjamesbrown"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm"
+              >
                 LinkedIn
               </a>
             </div>

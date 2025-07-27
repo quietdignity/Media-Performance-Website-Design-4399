@@ -1,13 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mediaperformanceinsights.com/</loc>
     <lastmod>2023-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1753477059899-blob</image:loc>
+      <image:title>Media Performance Insights Hero Image</image:title>
+      <image:caption>Strategic Media Analysis for Executives</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://mediaperformanceinsights.com/about</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://quest-media-storage-bucket.s3.us-east-2.amazonaws.com/1753472217521-blob</image:loc>
+      <image:title>James A. Brown</image:title>
+      <image:caption>Founder of Media Performance Insights</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/services</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/training</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/frameworks</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/sam</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/storytelling-triangle</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/fire-method</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mediaperformanceinsights.com/persuasion-compass</loc>
     <lastmod>2023-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,15 +71,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mediaperformanceinsights.com/5minutes</loc>
+    <lastmod>2023-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://mediaperformanceinsights.com/privacy</loc>
     <lastmod>2023-09-25</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mediaperformanceinsights.com/terms</loc>
     <lastmod>2023-09-25</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>

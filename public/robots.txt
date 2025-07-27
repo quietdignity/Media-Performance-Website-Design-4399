@@ -1,6 +1,18 @@
 # robots.txt for Media Performance Insights
-
 User-agent: *
+Allow: /
+
+# Disallow crawling of admin areas
+Disallow: /admin/
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
 Allow: /
 
 # Sitemap location

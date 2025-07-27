@@ -3,42 +3,33 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../../common/SafeIcon';
 
-const { FiVideo, FiFileText, FiMessageSquare, FiBookOpen, FiCheckCircle } = FiIcons;
+const { FiVideo, FiUsers, FiCheckCircle } = FiIcons;
 
 function ServicesSection() {
   const services = [
     {
       icon: FiVideo,
-      title: "Comprehensive Media Performance Analysis",
-      description: "Video Breakdown: Frame-by-frame analysis using our core four frameworks",
-      features: ["Video breakdown with timestamps", "Framework application analysis", "Strengths and opportunities identified"],
+      title: "Media Performance Analysis",
+      description: "Transform past media experiences into future strategic advantage through systematic analysis of your communication patterns, audience impact, and missed opportunities.",
+      features: [
+        "Performance Audit: Comprehensive analysis of recent media interactions",
+        "Strategic Assessment: Evaluation of your current media presence",
+        "Audience Intelligence: Analysis of how your messages resonate",
+        "Strategic Recommendations: Specific action plan for optimization"
+      ],
       id: "analysis"
     },
     {
-      icon: FiFileText,
-      title: "Strategic Report",
-      description: "Detailed written analysis that you can reference and implement immediately.",
+      icon: FiUsers,
+      title: "Media Performance Partnership",
+      description: "Continuous strategic support to help you navigate evolving media landscapes, build influential relationships, and turn every media opportunity into strategic advantage.",
       features: [
-        "What worked and why audiences responded",
-        "Missed opportunities that cost influence",
-        "Specific tactical improvements for immediate implementation",
-        "Long-term strategy for building media authority"
+        "Monthly Strategic Planning: Media opportunity identification and preparation",
+        "Real-Time Advisory: Access for urgent media situations",
+        "Relationship Intelligence: Ongoing journalist relationship building",
+        "Crisis Communications: Rapid response protocols and reputation management"
       ],
-      id: "reports"
-    },
-    {
-      icon: FiMessageSquare,
-      title: "Strategy Session for Implementation",
-      description: "Personal debrief and tactical implementation guidance.",
-      features: ["60-minute strategic session", "Personalized coaching", "Q&A and clarification"],
-      id: "sessions"
-    },
-    {
-      icon: FiBookOpen,
-      title: "Custom Materials and Talking Points",
-      description: "Tailored resources designed specifically for your communication style and goals.",
-      features: ["Key message frameworks", "Industry-specific talking points", "Crisis communication templates"],
-      id: "materials"
+      id: "partnership"
     }
   ];
 
@@ -53,10 +44,10 @@ function ServicesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-charcoal-900 mb-6">
-            What You Get
+            Our Service Offerings
           </h2>
           <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive analysis system designed to transform your media presence from forgettable to unforgettable.
+            Two focused services designed to transform your media performance through strategic analysis and ongoing partnership.
           </p>
         </motion.div>
 
@@ -78,8 +69,12 @@ function ServicesSection() {
                   <SafeIcon icon={service.icon} className="w-8 h-8 text-primary-600" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-charcoal-900 mb-3" itemProp="name">{service.title}</h3>
-                  <p className="text-charcoal-600 mb-4 leading-relaxed" itemProp="description">{service.description}</p>
+                  <h3 className="text-xl font-bold text-charcoal-900 mb-3" itemProp="name">
+                    {service.title}
+                  </h3>
+                  <p className="text-charcoal-600 mb-4 leading-relaxed" itemProp="description">
+                    {service.description}
+                  </p>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center space-x-2" itemProp="hasOfferCatalog">
@@ -104,10 +99,10 @@ function ServicesSection() {
         >
           <div className="bg-gradient-to-r from-primary-600 to-primary-800 rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Transform Your Media Presence?
+              Ready to Transform Your Media Performance?
             </h3>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Get started with a comprehensive analysis that reveals exactly what's working, what isn't, and how to optimize your communication for maximum impact.
+              Schedule your strategic consultation to discuss your media performance objectives and determine the best approach for your situation.
             </p>
             <motion.a
               href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
@@ -117,7 +112,7 @@ function ServicesSection() {
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-gold-500 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gold-600 transition-colors"
             >
-              Get Your Analysis Today
+              Schedule Your Consultation
             </motion.a>
           </div>
         </motion.div>
