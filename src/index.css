@@ -19,6 +19,23 @@ body {
   height: 100%;
 }
 
+/* Mobile-first responsive design fixes */
+@media (max-width: 768px) {
+  .mobile-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .mobile-text {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+  }
+  
+  .mobile-padding {
+    padding: 1rem !important;
+  }
+}
+
 /* Accessibility Styles */
 .high-contrast {
   --tw-bg-opacity: 1;

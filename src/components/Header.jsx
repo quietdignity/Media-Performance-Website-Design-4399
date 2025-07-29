@@ -38,21 +38,47 @@ function Header() {
   }, [isMenuOpen]);
 
   const navigation = [
-    {name: 'About', href: '/about'},
+    {
+      name: 'About',
+      href: '/about'
+    },
     {
       name: 'Services',
       href: '/services',
       dropdown: [
-        {name: 'Media Performance Analysis', href: '/services#analysis'},
-        {name: 'Media Performance Partnership', href: '/services#partnership'},
+        {
+          name: 'Media Performance Analysis',
+          href: '/services#analysis'
+        },
+        {
+          name: 'Mock Media Interviews',
+          href: '/services#mock-interviews'
+        },
+        {
+          name: 'Media Performance Partnership',
+          href: '/services#partnership'
+        },
       ],
     },
-    {name: 'Frameworks', href: '/frameworks'},
-    {name: 'Contact', href: '/contact'},
+    {
+      name: 'Frameworks',
+      href: '/frameworks'
+    },
+    {
+      name: 'Contact',
+      href: '/contact'
+    },
   ];
 
+  // Check if we're on homepage
+  const isHomepage = location.pathname === '/';
+
   // Adjust top position based on whether we're on a page that shows the top bar
-  const showTopBar = location.pathname !== '/5minutes';
+  const showTopBar = location.pathname !== '/5minutes' && 
+                    location.pathname !== '/login' && 
+                    location.pathname !== '/onboarding' && 
+                    location.pathname !== '/dashboard';
+
   // Only adjust position on medium and larger screens since TopBar is hidden on mobile
   const headerTopClass = showTopBar && !isScrolled ? 'md:top-16 md:sm:top-20 top-0' : 'top-0';
 
@@ -61,12 +87,18 @@ function Header() {
     hidden: {
       opacity: 0,
       y: -5,
-      transition: {duration: 0.75, ease: "easeInOut"}
+      transition: {
+        duration: 0.75,
+        ease: "easeInOut"
+      }
     },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {duration: 0.75, ease: "easeOut"}
+      transition: {
+        duration: 0.75,
+        ease: "easeOut"
+      }
     }
   };
 
@@ -76,28 +108,28 @@ function Header() {
         initial={{y: -100}}
         animate={{y: 0}}
         className={`fixed w-full z-40 transition-all duration-300 ${headerTopClass} ${
-          isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+          isScrolled || !isHomepage ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-black/40 backdrop-blur-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            {/* Logo - Added padding-top to slide logo down a bit */}
-            <Link to="/" className="flex items-center space-x-2 pt-1" aria-label="Media Performance Insights Home">
+            {/* Logo */}
+            <Link
+              to="/"
+              className="flex items-center space-x-2 pt-1"
+              aria-label="Media Performance Insights Home"
+            >
               <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-800 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">MPI</span>
               </div>
               <div className="hidden sm:block">
-                <h1
-                  className={`text-xl font-bold transition-colors duration-300 ${
-                    isScrolled ? 'text-charcoal-900' : 'text-white'
-                  }`}
-                >
+                <h1 className={`text-xl font-bold transition-colors duration-300 ${
+                  isScrolled || !isHomepage ? 'text-charcoal-900' : 'text-white'
+                }`}>
                   MediaPerformance{' '}
-                  <span
-                    className={`transition-colors duration-300 ${
-                      isScrolled ? 'text-primary-600' : 'text-white'
-                    }`}
-                  >
+                  <span className={`transition-colors duration-300 ${
+                    isScrolled || !isHomepage ? 'text-primary-600' : 'text-white'
+                  }`}>
                     Insights
                   </span>
                 </h1>
@@ -109,15 +141,16 @@ function Header() {
               {navigation.map((item) => (
                 item.dropdown ? (
                   <div key={item.name} className="relative group">
-                    <Link
-                      to={item.href}
+                    <button
+                      onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                       onMouseEnter={() => setServicesDropdownOpen(true)}
-                      onMouseLeave={() => setServicesDropdownOpen(false)}
-                      className={`text-sm font-medium transition-colors duration-200 flex items-center space-x-1 ${
-                        isScrolled
+                      className={`text-sm font-medium transition-colors duration-200 flex items-center space-x-1 cursor-pointer ${
+                        isScrolled || !isHomepage
                           ? 'text-charcoal-700 hover:text-primary-600'
                           : 'text-white hover:text-white/80'
                       }`}
+                      aria-expanded={servicesDropdownOpen}
+                      aria-haspopup="true"
                     >
                       <span>{item.name}</span>
                       <SafeIcon
@@ -126,29 +159,33 @@ function Header() {
                           servicesDropdownOpen ? 'rotate-180' : ''
                         }`}
                       />
-                    </Link>
-                    <motion.div
-                      initial="hidden"
-                      animate={servicesDropdownOpen ? "visible" : "hidden"}
-                      variants={dropdownVariants}
-                      className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white z-20 ${
-                        servicesDropdownOpen ? 'block' : 'hidden'
-                      }`}
+                    </button>
+                    <div
                       onMouseEnter={() => setServicesDropdownOpen(true)}
                       onMouseLeave={() => setServicesDropdownOpen(false)}
+                      className="absolute left-0 pt-2 w-56"
                     >
-                      <div className="py-1">
-                        {item.dropdown.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.name}
-                            to={dropdownItem.href}
-                            className="block px-4 py-2 text-sm text-charcoal-700 hover:bg-charcoal-50 hover:text-primary-600"
-                          >
-                            {dropdownItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
+                      <motion.div
+                        initial="hidden"
+                        animate={servicesDropdownOpen ? "visible" : "hidden"}
+                        variants={dropdownVariants}
+                        className={`rounded-md shadow-lg bg-white border border-charcoal-100 z-20 ${
+                          servicesDropdownOpen ? 'block' : 'hidden'
+                        }`}
+                      >
+                        <div className="py-1">
+                          {item.dropdown.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.name}
+                              to={dropdownItem.href}
+                              className="block px-4 py-3 text-sm text-charcoal-700 hover:bg-charcoal-50 hover:text-primary-600"
+                            >
+                              {dropdownItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </div>
                   </div>
                 ) : (
                   <Link
@@ -156,18 +193,15 @@ function Header() {
                     to={item.href}
                     className={`text-sm font-medium transition-colors duration-200 ${
                       location.pathname === item.href
-                        ? isScrolled
-                          ? 'text-primary-600'
-                          : 'text-white'
-                        : isScrolled
-                        ? 'text-charcoal-700 hover:text-primary-600'
-                        : 'text-white hover:text-white/80'
+                        ? (isScrolled || !isHomepage) ? 'text-primary-600' : 'text-white'
+                        : (isScrolled || !isHomepage) ? 'text-charcoal-700 hover:text-primary-600' : 'text-white hover:text-white/80'
                     }`}
                   >
                     {item.name}
                   </Link>
                 )
               ))}
+
               <div className="flex items-center space-x-4 ml-8">
                 <motion.a
                   href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
@@ -177,7 +211,7 @@ function Header() {
                   whileTap={{scale: 0.95}}
                   className="bg-gold-500 text-white px-6 py-2 rounded-lg font-medium hover:bg-gold-600 transition-colors"
                 >
-                  Get Insights Today
+                  Get Started
                 </motion.a>
               </div>
             </nav>
@@ -185,12 +219,12 @@ function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors ${
+              className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
                 isMenuOpen
-                  ? 'text-charcoal-700'
-                  : isScrolled
-                  ? 'text-charcoal-700 hover:bg-charcoal-100'
-                  : 'text-white hover:bg-white/10'
+                  ? 'text-charcoal-700 bg-white shadow-lg'
+                  : (isScrolled || !isHomepage)
+                    ? 'text-charcoal-700 hover:bg-charcoal-100'
+                    : 'text-white bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20'
               }`}
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
@@ -202,10 +236,10 @@ function Header() {
 
       {/* Mobile Navigation Menu - Fixed Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40">
+        <div className="fixed inset-0 z-50">
           {/* Backdrop */}
           <div className="absolute inset-0 bg-black/50" onClick={() => setIsMenuOpen(false)} />
-
+          
           {/* Menu Content */}
           <div className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl overflow-y-auto">
             <div className="px-6 py-8 space-y-6 h-full">
@@ -232,7 +266,7 @@ function Header() {
               </div>
 
               {/* Navigation Links */}
-              <nav className="space-y-4">
+              <nav className="space-y-4 flex-1">
                 {navigation.map((item) => (
                   item.dropdown ? (
                     <div key={item.name} className="space-y-2">
@@ -282,7 +316,7 @@ function Header() {
               </nav>
 
               {/* CTA Button */}
-              <div className="pt-6 border-t border-charcoal-200 mt-auto">
+              <div className="pt-6 border-t border-charcoal-200">
                 <a
                   href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
                   target="_blank"
@@ -290,7 +324,7 @@ function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="block w-full bg-gold-500 text-white px-6 py-4 rounded-lg font-medium text-center hover:bg-gold-600 transition-colors"
                 >
-                  Get Insights Today
+                  Get Started
                 </a>
               </div>
             </div>

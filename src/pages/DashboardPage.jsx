@@ -14,8 +14,8 @@ function DashboardPage() {
   const frameworks = [
     {
       icon: FiEye,
-      name: "Self-Awareness Matrix (SAM)",
-      description: "Your foundation - mapping your four knowledge buckets",
+      name: "Self Awareness Matrix (S.A.M)",
+      description: "Are you showing the best version of yourself?",
       color: "from-purple-500 to-purple-700",
       link: "/sam-framework",
       status: "Available"
@@ -23,7 +23,7 @@ function DashboardPage() {
     {
       icon: FiTriangle,
       name: "The Storytelling Triangle",
-      description: "Your connection - authentic narratives that resonate",
+      description: "Does your approach connect with what your audience actually cares about and the bigger picture?",
       color: "from-blue-500 to-blue-700",
       link: "/storytelling-triangle-framework",
       status: "Available"
@@ -31,7 +31,7 @@ function DashboardPage() {
     {
       icon: FiZap,
       name: "The FIRE Method",
-      description: "Your adaptation - real-time situational mastery",
+      description: "Can you adapt when things don't go as planned?",
       color: "from-orange-500 to-red-600",
       link: "/fire-method-framework",
       status: "Available"
@@ -39,7 +39,7 @@ function DashboardPage() {
     {
       icon: FiCompass,
       name: "The Persuasion Compass",
-      description: "Your influence - ethical persuasion that serves",
+      description: "Are you building credibility, emotional connection, and logical reasoning at the right moments?",
       color: "from-green-500 to-green-700",
       link: "/persuasion-compass-framework",
       status: "Available"
@@ -135,11 +135,7 @@ function DashboardPage() {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   {quickActions.map((action, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
+                    <motion.div key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                       {action.action.startsWith('http') ? (
                         <a
                           href={action.action}

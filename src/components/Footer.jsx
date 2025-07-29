@@ -24,7 +24,7 @@ function Footer() {
               </h3>
             </div>
             <p className="text-charcoal-300 text-sm leading-relaxed">
-              Transform missed opportunities into commanding presence with strategic analysis that reveals what separates forgettable experts from voices people remember.
+              Transform missed opportunities into commanding presence with strategic analysis exclusively for leaders and high-profile individuals.
             </p>
           </div>
 
@@ -53,6 +53,11 @@ function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/faq" className="text-charcoal-300 hover:text-primary-400 transition-colors text-sm">
+                  Frequently Asked Questions
+                </Link>
+              </li>
+              <li>
                 <Link to="/contact" className="text-charcoal-300 hover:text-primary-400 transition-colors text-sm">
                   Contact
                 </Link>
@@ -67,11 +72,16 @@ function Footer() {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Services</h3>
+            <h3 className="text-lg font-semibold text-white">Professional Services</h3>
             <ul className="space-y-2 text-sm text-charcoal-300">
               <li>
                 <Link to="/services#analysis" className="text-charcoal-300 hover:text-primary-400 transition-colors">
                   Media Performance Analysis
+                </Link>
+              </li>
+              <li>
+                <Link to="/services#mock-interviews" className="text-charcoal-300 hover:text-primary-400 transition-colors">
+                  Mock Media Interviews
                 </Link>
               </li>
               <li>
@@ -84,7 +94,7 @@ function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Get Started</h3>
+            <h3 className="text-lg font-semibold text-white">For Leaders</h3>
             <div className="space-y-3">
               <p className="text-charcoal-300 text-sm">
                 Ready to transform your media presence? Schedule your strategic consultation today.
@@ -99,7 +109,7 @@ function Footer() {
               className="inline-flex items-center space-x-2 bg-gold-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gold-600 transition-colors text-sm"
             >
               <SafeIcon icon={FiCalendar} className="w-4 h-4" />
-              <span>Schedule Consultation</span>
+              <span>Strategic Consultation</span>
             </motion.a>
           </div>
         </div>
@@ -116,6 +126,9 @@ function Footer() {
               </Link>
               <Link to="/terms" className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm">
                 Terms of Service
+              </Link>
+              <Link to="/faq" className="text-charcoal-400 hover:text-primary-400 transition-colors text-sm">
+                FAQ
               </Link>
               <a
                 href="https://www.linkedin.com/in/anotherjamesbrown"

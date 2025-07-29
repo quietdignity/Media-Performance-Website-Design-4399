@@ -1,61 +1,53 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion';
+import {Link} from 'react-router-dom';
 import SeoHelmet from '../components/SeoHelmet';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiTriangle, FiCompass, FiZap, FiEye, FiArrowRight } = FiIcons;
+const {FiTriangle,FiCompass,FiZap,FiEye,FiArrowRight} = FiIcons;
 
 function FrameworksPage() {
   const frameworks = [
     {
       icon: FiEye,
-      name: "The Self-Awareness Matrix (SAM)",
+      name: "Self Awareness Matrix (S.A.M)",
       subtitle: "Your Foundation",
-      description: "Maps your four buckets of knowledge—from obvious expertise to hidden capabilities",
+      description: "Are you showing the best version of yourself?",
       why: "Most leaders only access 25% of their communication toolkit",
       result: "Authentic confidence that comes from knowing exactly what you bring to every conversation",
       color: "from-purple-500 to-purple-700",
-      id: "sam",
-      link: "/sam",
-      deepLink: "/sam-framework"
+      id: "sam"
     },
     {
       icon: FiTriangle,
       name: "The Storytelling Triangle",
       subtitle: "Your Connection",
-      description: "Transforms personal experience into compelling narratives using YOU + THEM + NOW",
+      description: "Does your approach connect with what your audience actually cares about and the bigger picture?",
       why: "Stories create lasting influence when they serve others' genuine needs",
       result: "Authentic leadership presence that people remember and trust",
       color: "from-blue-500 to-blue-700",
-      id: "triangle",
-      link: "/storytelling-triangle",
-      deepLink: "/storytelling-triangle-framework"
+      id: "triangle"
     },
     {
       icon: FiZap,
       name: "The FIRE Method",
       subtitle: "Your Adaptation",
-      description: "Read any room in 90 seconds and adapt your approach through FIND, IDENTIFY, REHEARSE, EXECUTE",
+      description: "Can you adapt when things don't go as planned?",
       why: "The same message can succeed or fail based on real-time situational awareness",
       result: "Dynamic communication that works with any audience, in any situation",
       color: "from-orange-500 to-red-600",
-      id: "fire",
-      link: "/fire-method",
-      deepLink: "/fire-method-framework"
+      id: "fire"
     },
     {
       icon: FiCompass,
       name: "The Persuasion Compass",
       subtitle: "Your Influence",
-      description: "Orchestrates ETHOS, PATHOS, LOGOS, and KAIROS for ethical influence",
+      description: "Are you building credibility, emotional connection, and logical reasoning at the right moments?",
       why: "Sustainable persuasion serves others' interests while achieving your goals",
       result: "Influential leadership that people welcome rather than resist",
       color: "from-green-500 to-green-700",
-      id: "compass",
-      link: "/persuasion-compass",
-      deepLink: "/persuasion-compass-framework"
+      id: "compass"
     }
   ];
 
@@ -79,7 +71,7 @@ function FrameworksPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Our Four Core Frameworks | Media Performance Insights",
-    "description": "Discover our integrated system for executive communication mastery - four powerful frameworks that create authentic, effective communication in any situation.",
+    "description": "Discover our integrated system for communication mastery - four powerful frameworks that create authentic, effective communication in any situation.",
     "publisher": {
       "@type": "Organization",
       "name": "Media Performance Insights"
@@ -105,8 +97,8 @@ function FrameworksPage() {
     >
       <SeoHelmet
         title="Our Four Core Frameworks | Media Performance Insights"
-        description="Discover our integrated system for executive communication mastery - four powerful frameworks that create authentic, effective communication in any situation."
-        keywords="communication frameworks, executive communication, leadership communication, storytelling triangle, persuasion compass, FIRE method, self-awareness matrix, media training"
+        description="Discover our integrated system for communication mastery - four powerful frameworks that create authentic, effective communication in any situation."
+        keywords="communication frameworks, leadership communication, storytelling triangle, persuasion compass, FIRE method, self-awareness matrix, media training"
         schema={frameworksSchema}
       />
 
@@ -123,7 +115,7 @@ function FrameworksPage() {
               Our <span className="text-gold-400">Four Core</span> Frameworks
             </h1>
             <p className="text-xl md:text-2xl text-charcoal-200 max-w-4xl mx-auto leading-relaxed">
-              The Integrated System for Executive Communication Mastery
+              The Integrated System for Communication Mastery
             </p>
           </motion.div>
         </div>
@@ -198,39 +190,20 @@ function FrameworksPage() {
                       <p className="text-lg font-medium text-primary-600">{framework.subtitle}</p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-4 mb-6">
                     <div>
                       <p className="text-sm font-semibold text-charcoal-500">WHAT IT DOES</p>
                       <p className="text-lg text-charcoal-800">{framework.description}</p>
                     </div>
-                    
                     <div>
                       <p className="text-sm font-semibold text-charcoal-500">WHY IT MATTERS</p>
                       <p className="text-lg text-charcoal-800">{framework.why}</p>
                     </div>
-                    
                     <div>
                       <p className="text-sm font-semibold text-charcoal-500">THE RESULT</p>
                       <p className="text-lg text-charcoal-800">{framework.result}</p>
                     </div>
-                  </div>
-
-                  <div className="flex flex-col space-y-3">
-                    <Link
-                      to={framework.link}
-                      className="flex items-center text-primary-600 font-medium hover:text-primary-700 transition-colors"
-                    >
-                      <span>Quick Overview</span>
-                      <SafeIcon icon={FiArrowRight} className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
-                    <Link
-                      to={framework.deepLink}
-                      className="flex items-center text-charcoal-700 font-semibold hover:text-primary-600 transition-colors"
-                    >
-                      <span>Complete Framework Guide</span>
-                      <SafeIcon icon={FiArrowRight} className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -330,7 +303,6 @@ function FrameworksPage() {
             <p className="text-xl text-white/90 leading-relaxed mb-12">
               Ready to master the complete system? Schedule a consultation to learn how these frameworks can transform your communication effectiveness.
             </p>
-
             <motion.a
               href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
               target="_blank"

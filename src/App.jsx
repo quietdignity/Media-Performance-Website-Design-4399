@@ -1,8 +1,8 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { HelmetProvider } from 'react-helmet-async';
-import { AuthProvider } from './context/AuthContext';
+import {BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import {motion, AnimatePresence} from 'framer-motion';
+import {HelmetProvider} from 'react-helmet-async';
+import {AuthProvider} from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import TopBar from './components/TopBar';
 import Header from './components/Header';
@@ -10,23 +10,19 @@ import Footer from './components/Footer';
 import ScrollToTopButton from './components/common/ScrollToTopButton';
 import AccessibilityControls from './components/common/AccessibilityControls';
 import FeedbackWidget from './components/common/FeedbackWidget';
+
+// Page imports
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ChecklistPage from './pages/ChecklistPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import FAQPage from './pages/FAQPage';
 import FrameworksPage from './pages/FrameworksPage';
-import SamPage from './pages/SamPage';
-import StorytellingTrianglePage from './pages/StorytellingTrianglePage';
-import FireMethodPage from './pages/FireMethodPage';
-import PersuasionCompassPage from './pages/PersuasionCompassPage';
-import SamFrameworkPage from './pages/SamFrameworkPage';
-import StorytellingTriangleFrameworkPage from './pages/StorytellingTriangleFrameworkPage';
-import FireMethodFrameworkPage from './pages/FireMethodFrameworkPage';
-import PersuasionCompassFrameworkPage from './pages/PersuasionCompassFrameworkPage';
+
+// Service pages
 import ServicesPage from './pages/ServicesPage';
-import TrainingPage from './pages/TrainingPage';
 import LoginPage from './pages/LoginPage';
 import OnboardingPage from './pages/OnboardingPage';
 import DashboardPage from './pages/DashboardPage';
@@ -45,8 +41,8 @@ function AppContent() {
                            location.pathname !== '/dashboard';
   
   const showAccessibilityTools = location.pathname !== '/login' && 
-                                location.pathname !== '/onboarding';
-
+                                 location.pathname !== '/onboarding';
+  
   return (
     <div className="min-h-screen bg-white">
       {showTopBar && <TopBar />}
@@ -60,18 +56,12 @@ function AppContent() {
           <Route path="/5minutes" element={<ChecklistPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/frameworks" element={<FrameworksPage />} />
-          <Route path="/sam" element={<SamPage />} />
-          <Route path="/storytelling-triangle" element={<StorytellingTrianglePage />} />
-          <Route path="/fire-method" element={<FireMethodPage />} />
-          <Route path="/persuasion-compass" element={<PersuasionCompassPage />} />
-          <Route path="/sam-framework" element={<SamFrameworkPage />} />
-          <Route path="/storytelling-triangle-framework" element={<StorytellingTriangleFrameworkPage />} />
-          <Route path="/fire-method-framework" element={<FireMethodFrameworkPage />} />
-          <Route path="/persuasion-compass-framework" element={<PersuasionCompassFrameworkPage />} />
+          
+          {/* Service pages */}
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/training" element={<TrainingPage />} />
-
+          
           {/* Authentication Routes */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/onboarding" element={
@@ -84,13 +74,12 @@ function AppContent() {
               <DashboardPage />
             </ProtectedRoute>
           } />
-
+          
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AnimatePresence>
       
       {showHeaderFooter && <Footer />}
-      
       {showAccessibilityTools && (
         <>
           <ScrollToTopButton />

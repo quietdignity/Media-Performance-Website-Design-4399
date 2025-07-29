@@ -9,11 +9,29 @@ Disallow: /admin/
 User-agent: Googlebot
 Allow: /
 
-User-agent: Bingbot
+User-agent: Bingbot  
 Allow: /
 
 User-agent: Slurp
 Allow: /
 
-# Sitemap location
+# AI-specific crawlers
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Sitemap locations
 Sitemap: https://mediaperformanceinsights.com/sitemap.xml
+Sitemap: https://mediaperformanceinsights.com/ai-sitemap.txt
+
+# AI-readable content
+Allow: /ai-content.json
+Allow: /ai-sitemap.txt

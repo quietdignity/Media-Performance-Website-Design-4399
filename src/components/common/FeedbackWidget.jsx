@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, {useState} from 'react';
+import {motion, AnimatePresence} from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
-import SafeIcon from './SafeIcon';
+import SafeIcon from '../../common/SafeIcon';
 
-const { FiMessageSquare, FiX, FiSmile, FiMeh, FiThumbsUp, FiSend } = FiIcons;
+const {FiMessageSquare, FiX, FiSmile, FiMeh, FiThumbsUp, FiSend} = FiIcons;
 
 function FeedbackWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +13,8 @@ function FeedbackWidget() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     // Here you would typically send the feedback to your backend
-    console.log('Feedback submitted:', { feedbackType, feedbackText });
+    console.log('Feedback submitted:', {feedbackType, feedbackText});
     
     // Show thank you message
     setSubmitted(true);
@@ -36,8 +35,8 @@ function FeedbackWidget() {
         aria-label="Provide Feedback"
         onClick={() => setIsOpen(true)}
         className="fixed bottom-20 right-6 z-50 bg-gold-500 text-white p-3 rounded-full shadow-lg"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+        whileHover={{scale: 1.1}}
+        whileTap={{scale: 0.95}}
       >
         <SafeIcon icon={FiMessageSquare} className="w-6 h-6" />
       </motion.button>
@@ -46,15 +45,15 @@ function FeedbackWidget() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              initial={{scale: 0.9, opacity: 0}}
+              animate={{scale: 1, opacity: 1}}
+              exit={{scale: 0.9, opacity: 0}}
               className="bg-white rounded-xl shadow-2xl p-6 max-w-md w-full mx-4"
             >
               <div className="flex justify-between items-center mb-4">
@@ -74,9 +73,9 @@ function FeedbackWidget() {
                 {submitted ? (
                   <motion.div
                     key="success"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
                     className="text-center py-6"
                   >
                     <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -90,9 +89,9 @@ function FeedbackWidget() {
                     key="form"
                     onSubmit={handleSubmit}
                     className="space-y-6"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
                   >
                     <div>
                       <label className="block text-sm font-medium text-charcoal-700 mb-2">How was your experience?</label>

@@ -1,30 +1,27 @@
 import React from 'react';
-import {motion} from 'framer-motion';
-import {Link} from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SeoHelmet from '../components/SeoHelmet';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const {FiUsers, FiTarget, FiCalendar, FiArrowRight, FiCheckCircle, FiTriangle, FiCompass, FiZap, FiEye, FiVideo, FiShield} = FiIcons;
+const { FiUsers, FiTarget, FiCalendar, FiArrowRight, FiCheckCircle, FiTriangle, FiCompass, FiZap, FiEye, FiVideo, FiShield, FiMic } = FiIcons;
 
 function TrainingPage() {
   const services = [
     {
       icon: FiVideo,
       title: "Media Performance Analysis",
-      subtitle: "Comprehensive review and strategic planning for enhanced media effectiveness",
+      subtitle: "For leaders who want to learn from past interviews",
       description: "Transform past media experiences into future strategic advantage through systematic analysis of your communication patterns, audience impact, and missed opportunities.",
       features: [
-        "Performance Audit: Comprehensive analysis of recent media interactions and messaging effectiveness",
-        "Strategic Assessment: Evaluation of your current media presence and authority positioning",
-        "Audience Intelligence: Analysis of how your messages resonate with different stakeholder groups",
-        "Competitive Context: Review of how your media performance compares to industry leaders",
-        "Strategic Recommendations: Specific action plan for optimizing future media opportunities",
-        "Framework Training: Introduction to proven influence methodologies for consistent results"
+        "Complete breakdown of your interview with specific timestamps",
+        "Written report showing what worked, what didn't, and why",
+        "One-hour session to walk through improvements and answer questions"
       ],
       whatYouGet: [
         {
-          title: "Comprehensive Media Performance Analysis",
+          title: "Comprehensive Analysis",
           items: [
             "Video breakdown with timestamps",
             "Framework application analysis",
@@ -41,7 +38,7 @@ function TrainingPage() {
           ]
         },
         {
-          title: "Strategy Session for Implementation",
+          title: "Strategy Session",
           items: [
             "60-minute strategic session",
             "Personalized coaching",
@@ -60,29 +57,74 @@ function TrainingPage() {
       ]
     },
     {
-      icon: FiUsers,
-      title: "Media Performance Partnership",
-      subtitle: "Ongoing strategic advisory for sustained media excellence",
-      description: "Continuous strategic support to help you navigate evolving media landscapes, build influential relationships, and turn every media opportunity into strategic advantage.",
+      icon: FiMic,
+      title: "Mock Media Interviews",
+      subtitle: "For leaders who want hands-on practice before the real thing",
+      description: "Practice with real journalists in conditions that mimic actual interviews. Get the tough questions, time pressure, and real-world scenarios you'll face.",
       features: [
-        "Monthly Strategic Planning: Media opportunity identification and preparation strategy",
-        "Real-Time Advisory: Access for urgent media situations and rapid response planning",
-        "Relationship Intelligence: Ongoing journalist relationship building and industry intelligence",
-        "Crisis Communications: Rapid response protocols and reputation management support",
-        "Performance Optimization: Continuous refinement based on real-world results and feedback",
-        "Industry Intelligence: Regular briefings on media landscape changes affecting your sector"
+        "Live practice sessions with experienced journalists",
+        "Real interview conditions and pressure",
+        "Immediate feedback on what worked and what needs work",
+        "Multiple rounds to build confidence and skills"
       ],
       whatYouGet: [
         {
-          title: "Monthly Strategic Planning",
+          title: "Realistic Practice",
           items: [
-            "Opportunity identification",
+            "Sessions with experienced journalists",
+            "Industry-specific questions",
+            "Challenging interview scenarios"
+          ]
+        },
+        {
+          title: "Performance Feedback",
+          items: [
+            "Immediate post-interview analysis",
+            "Practical improvement techniques",
+            "Specific messaging refinement",
+            "Body language and delivery coaching"
+          ]
+        },
+        {
+          title: "Confidence Building",
+          items: [
+            "Multiple practice rounds",
+            "Increasing difficulty levels",
+            "Crisis situation simulations"
+          ]
+        }
+      ],
+      investment: "Contact for pricing",
+      timeline: "1-2 days of intensive training",
+      format: "In-person or virtual interview simulations with real journalists",
+      idealFor: [
+        "Executives facing high-stakes interviews",
+        "Leaders preparing for crisis situations",
+        "Anyone who wants to practice before it matters",
+        "Teams preparing for major media announcements"
+      ]
+    },
+    {
+      icon: FiUsers,
+      title: "Media Performance Partnership",
+      subtitle: "For leaders with regular media exposure",
+      description: "Ongoing support to help you navigate evolving media landscapes, build influential relationships, and turn every media opportunity into strategic advantage.",
+      features: [
+        "Monthly planning sessions for upcoming opportunities",
+        "Quick access when urgent situations come up",
+        "Help building relationships with key journalists and industry contacts"
+      ],
+      whatYouGet: [
+        {
+          title: "Strategic Planning",
+          items: [
+            "Monthly opportunity identification",
             "Preparation strategy",
             "Content development guidance"
           ]
         },
         {
-          title: "Ongoing Strategic Support",
+          title: "Ongoing Support",
           items: [
             "Real-time advisory access",
             "Urgent situation response planning",
@@ -90,9 +132,9 @@ function TrainingPage() {
           ]
         },
         {
-          title: "Relationship Development",
+          title: "Relationship Building",
           items: [
-            "Journalist relationship building",
+            "Journalist relationship development",
             "Industry intelligence briefings",
             "Reputation management support"
           ]
@@ -114,26 +156,26 @@ function TrainingPage() {
   const frameworks = [
     {
       icon: FiEye,
-      name: "Self-Awareness Matrix (SAM)",
-      description: "Maps your four buckets of knowledge—from obvious expertise to hidden capabilities—creating a foundation for authentic communication.",
+      name: "Self Awareness Matrix (S.A.M)",
+      description: "Are you showing the best version of yourself?",
       color: "from-purple-500 to-purple-700"
     },
     {
       icon: FiTriangle,
       name: "The Storytelling Triangle",
-      description: "Transforms personal experience into compelling narratives using YOU + THEM + NOW, creating authentic leadership presence.",
+      description: "Does your approach connect with what your audience actually cares about and the bigger picture?",
       color: "from-blue-500 to-blue-700"
     },
     {
       icon: FiZap,
       name: "The FIRE Method",
-      description: "Teaches real-time adaptation through FIND, IDENTIFY, REHEARSE, EXECUTE, allowing you to read any situation in 90 seconds.",
+      description: "Can you adapt when things don't go as planned?",
       color: "from-orange-500 to-red-600"
     },
     {
       icon: FiCompass,
       name: "The Persuasion Compass",
-      description: "Orchestrates ETHOS, PATHOS, LOGOS, and KAIROS for ethical influence that stakeholders welcome rather than resist.",
+      description: "Are you building credibility, emotional connection, and logical reasoning at the right moments?",
       color: "from-green-500 to-green-700"
     }
   ];
@@ -193,7 +235,7 @@ function TrainingPage() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Strategic Media Services | Media Performance Insights",
-    "description": "Transform your media performance from reactive responses to strategic advantage with our Media Performance Analysis and Media Performance Partnership services.",
+    "description": "Transform your media performance from reactive responses to strategic advantage with our Media Performance Analysis, Mock Media Interviews, and Media Performance Partnership services.",
     "publisher": {
       "@type": "Organization",
       "name": "Media Performance Insights"
@@ -223,8 +265,8 @@ function TrainingPage() {
     >
       <SeoHelmet
         title="Strategic Media Services | Media Performance Insights"
-        description="Transform your media performance from reactive responses to strategic advantage with our Media Performance Analysis and Media Performance Partnership services."
-        keywords="media performance analysis, strategic media advisory, media performance partnership, executive media coaching, crisis communications, media strategy"
+        description="Transform your media performance from reactive responses to strategic advantage with our Media Performance Analysis, Mock Media Interviews, and Media Performance Partnership services."
+        keywords="media performance analysis, mock media interviews, strategic media advisory, media performance partnership, executive media coaching, crisis communications, media strategy"
         schema={trainingSchema}
       />
 
@@ -264,7 +306,7 @@ function TrainingPage() {
               Our Proprietary Frameworks
             </h2>
             <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-              Both services are built on our four core frameworks that create authentic, effective communication in any media situation.
+              All our services are built on our four core frameworks that create authentic, effective communication in any media situation.
             </p>
           </motion.div>
 
@@ -278,13 +320,9 @@ function TrainingPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="group relative overflow-hidden rounded-xl bg-white border border-charcoal-200 hover:shadow-xl transition-all duration-300"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${framework.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                ></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${framework.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 <div className="relative p-8">
-                  <div
-                    className={`w-16 h-16 bg-gradient-to-br ${framework.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-                  >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${framework.color} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <SafeIcon icon={framework.icon} className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-charcoal-900 mb-4">{framework.name}</h3>
@@ -323,10 +361,10 @@ function TrainingPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-charcoal-900 mb-6">
-              Our Service Offerings
+              Three Ways We Can Help
             </h2>
             <p className="text-xl text-charcoal-600 max-w-3xl mx-auto leading-relaxed">
-              Two focused services designed to transform your media performance through strategic analysis and ongoing partnership.
+              Three focused services designed to transform your media performance through analysis, practice, and ongoing partnership.
             </p>
           </motion.div>
 
@@ -362,10 +400,7 @@ function TrainingPage() {
                           <ul className="space-y-2">
                             {section.items.map((item, itemIndex) => (
                               <li key={itemIndex} className="flex items-start space-x-2">
-                                <SafeIcon
-                                  icon={FiCheckCircle}
-                                  className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                                />
+                                <SafeIcon icon={FiCheckCircle} className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                                 <span className="text-charcoal-700 text-sm">{item}</span>
                               </li>
                             ))}
@@ -381,10 +416,7 @@ function TrainingPage() {
                       <ul className="space-y-3">
                         {service.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-start space-x-3">
-                            <SafeIcon
-                              icon={FiCheckCircle}
-                              className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"
-                            />
+                            <SafeIcon icon={FiCheckCircle} className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                             <span className="text-charcoal-700">{feature}</span>
                           </li>
                         ))}
@@ -534,12 +566,7 @@ function TrainingPage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-charcoal-900 via-primary-900 to-charcoal-900 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 75% 75%, #f59e0b 0%, transparent 50%)`
-            }}
-          ></div>
+          <div className="absolute inset-0" style={{ backgroundImage: `radial-gradient(circle at 25% 25%, #3b82f6 0%, transparent 50%), radial-gradient(circle at 75% 75%, #f59e0b 0%, transparent 50%)` }}></div>
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
