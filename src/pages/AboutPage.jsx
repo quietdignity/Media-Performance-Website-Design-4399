@@ -1,12 +1,9 @@
 import React from 'react';
 import {motion} from 'framer-motion';
+import {Link} from 'react-router-dom';
 import SeoHelmet from '../components/SeoHelmet';
-import AIContentProvider from '../components/AIContentProvider';
-import AIReadableContent from '../components/common/AIReadableContent';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
-import {useAIOptimization} from '../hooks/useAIOptimization';
-
 const {FiBriefcase,FiBook,FiTarget,FiAward,FiCalendar,FiArrowRight}=FiIcons;
 
 function AboutPage() {
@@ -24,8 +21,6 @@ function AboutPage() {
     ],
     contentType: "biography"
   };
-
-  useAIOptimization(pageData);
 
   const credentials=[
     {
@@ -83,7 +78,7 @@ function AboutPage() {
       description: "Build lasting relationships with journalists and stakeholders through consistent,trustworthy communication."
     }
   ];
-  
+
   const personalQuotes=[
     {
       quote: "Your moment is nothing if it is not shared.",
@@ -120,22 +115,10 @@ function AboutPage() {
       "name": "Media Performance Insights"
     },
     "alumniOf": [
-      {
-        "@type": "Organization",
-        "name": "NPR"
-      },
-      {
-        "@type": "Organization",
-        "name": "USA Today"
-      },
-      {
-        "@type": "Organization",
-        "name": "PBS"
-      },
-      {
-        "@type": "Organization",
-        "name": "BBC"
-      }
+      {"@type": "Organization","name": "NPR"},
+      {"@type": "Organization","name": "USA Today"},
+      {"@type": "Organization","name": "PBS"},
+      {"@type": "Organization","name": "BBC"}
     ]
   };
 
@@ -183,7 +166,6 @@ function AboutPage() {
                 <h4 className="font-semibold text-charcoal-800 mb-2">Overview:</h4>
                 <p className="text-charcoal-700">Veteran journalist and strategic communication expert with extensive experience in public and commercial digital and broadcast journalism. Founder of Media Performance Insights,specializing in executive media training and crisis communication.</p>
               </div>
-              
               <div>
                 <h4 className="font-semibold text-charcoal-800 mb-2">Key Points:</h4>
                 <ul className="list-disc pl-5 text-charcoal-700 space-y-1">
@@ -195,7 +177,6 @@ function AboutPage() {
                   <li>Developer of four proprietary communication frameworks</li>
                 </ul>
               </div>
-              
               <div>
                 <h4 className="font-semibold text-charcoal-800 mb-2">Action Items:</h4>
                 <ul className="list-disc pl-5 text-charcoal-700 space-y-1">
@@ -205,7 +186,6 @@ function AboutPage() {
                   <li>Connect on LinkedIn for industry insights</li>
                 </ul>
               </div>
-              
               <div>
                 <h4 className="font-semibold text-charcoal-800 mb-2">Related Topics:</h4>
                 <div className="flex flex-wrap gap-2">
@@ -216,7 +196,6 @@ function AboutPage() {
                   ))}
                 </div>
               </div>
-              
               <div className="border-t pt-4 mt-4">
                 <p className="text-sm text-charcoal-600">
                   <strong>Provider:</strong> Media Performance Insights |{' '}
@@ -256,23 +235,19 @@ function AboutPage() {
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-primary-600/20 to-gold-500/20"></div>
               </motion.div>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Meet <span className="text-gold-400">James A. Brown</span>
             </h1>
-            
             <p className="text-xl md:text-2xl text-charcoal-200 max-w-4xl mx-auto leading-relaxed mb-8">
               Veteran Journalist & Strategic Communication Expert
             </p>
-            
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-4xl mx-auto">
               <p className="text-lg text-white leading-relaxed">
-                With extensive experience in public and commercial digital and broadcast journalism,
-                James brings a unique dual perspective as both journalist and crisis communicator to help
-                executives master media performance when stakes are highest.
+                With extensive experience in public and commercial digital and broadcast journalism,James brings a unique dual perspective as both journalist and crisis communicator to help executives master media performance when stakes are highest.
               </p>
               <p className="text-lg text-white leading-relaxed mt-4 italic">
-                "Don't just tell a story, start a fire."
+                "Don't just tell a story,start a fire."
               </p>
             </div>
           </motion.div>
@@ -411,13 +386,10 @@ function AboutPage() {
           >
             <div className="bg-charcoal-50 rounded-xl p-8 mb-12">
               <p className="text-lg text-charcoal-700 leading-relaxed mb-6">
-                "The best media training doesn't change who you are—it reveals who you are at your strongest.
-                My job is to help leaders access their complete expertise and share it in ways that serve
-                stakeholders' genuine needs while achieving legitimate business goals."
+                "The best media training doesn't change who you are—it reveals who you are at your strongest. My job is to help leaders access their complete expertise and share it in ways that serve stakeholders' genuine needs while achieving legitimate business goals."
               </p>
               <p className="text-lg text-charcoal-700 leading-relaxed">
-                This philosophy drives everything we do at Media Performance Insights,from our analytical
-                approach to our framework development to our ongoing partnership model.
+                This philosophy drives everything we do at Media Performance Insights,from our analytical approach to our framework development to our ongoing partnership model.
               </p>
             </div>
 
@@ -445,7 +417,6 @@ function AboutPage() {
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 25% 25%,#3b82f6 0%,transparent 50%),radial-gradient(circle at 75% 75%,#f59e0b 0%,transparent 50%)`}}></div>
         </div>
-        
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{y: 50,opacity: 0}}
@@ -457,16 +428,9 @@ function AboutPage() {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
               Ready to Transform Your <span className="text-gold-400">Media Performance?</span>
             </h2>
-            
             <p className="text-xl md:text-2xl text-charcoal-200 max-w-3xl mx-auto mb-6 leading-relaxed">
-              Let's discuss your media performance goals and develop a strategic approach
-              that transforms your expertise into compelling,authentic communication.
+              Let's discuss your media performance goals and develop a strategic approach that transforms your expertise into compelling,authentic communication.
             </p>
-            
-            <p className="text-xl text-gold-400 italic mb-12">
-              "Without losing something,you gain nothing."
-            </p>
-            
             <motion.a
               href="https://tidycal.com/jamesbrowntv/media-performance-insights-consultations"
               target="_blank"
@@ -478,7 +442,6 @@ function AboutPage() {
               <SafeIcon icon={FiCalendar} className="w-5 h-5" />
               <span>Schedule Your Strategic Consultation</span>
             </motion.a>
-            
             <p className="text-charcoal-300 mt-6">
               Connect with James directly to discuss your media performance objectives.
             </p>
